@@ -9,14 +9,31 @@ Press `a`, paste a URL, and yt-dlp is asked which formats the video offers.
 They are listed in a modal (resolution, codecs, size, whether the stream has
 sound); pick one and it downloads.
 
-## Install
+## Installation
 
-Requires Rust 1.89 or newer and `yt-dlp` on your `PATH` (ffmpeg too, for
-formats that merge video and audio).
+### macOS (Homebrew)
 
+Homebrew on macOS (Apple Silicon and Intel) is the supported way to install, with prebuilt binaries:
+
+```sh
+brew tap simoncoulton/yt-dlptui https://github.com/simoncoulton/yt-dlptui
+brew install yt-dlptui
 ```
+
+The formula installs `yt-dlp` and `ffmpeg` for you.
+
+### Arch Linux and other distributions
+
+There is no package for Arch or its derivatives yet. Build from source with a recent
+[Rust toolchain](https://rustup.rs) (1.89 or newer):
+
+```sh
+git clone https://github.com/simoncoulton/yt-dlptui
+cd yt-dlptui
 cargo install --path .
 ```
+
+You also need `yt-dlp` on your `PATH`, and `ffmpeg` for formats that merge video and audio.
 
 ## Usage
 
